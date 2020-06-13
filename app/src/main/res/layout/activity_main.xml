@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+<!--  使用自定义控件  -->
+    <com.example.myapplication.view.TitleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+<!--  android:textAllCaps="false" 取消默认的字母全部大写  -->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="Button"
+        android:id="@+id/btn_main"/>
+
+</LinearLayout>
