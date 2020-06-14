@@ -4,10 +4,13 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import com.example.myapplication.base.BaseActivity
+import com.example.myapplication.bean.FruitBean
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.ArrayList
 
-class MainActivity : BaseActivity() {
+class MainActivity : BaseActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +49,29 @@ class MainActivity : BaseActivity() {
 //            val intent = Intent(Intent.ACTION_DIAL)
 //            intent.data = Uri.parse("tel:1008611")
 //            startActivity(intent)
+        }
+
+        btnMainLV.setOnClickListener(this)
+        btnMainRV.setOnClickListener(this)
+        btnMainChat.setOnClickListener(this)
+    }
+
+//    private val data = arrayListOf("A","B","C","D","F","G","A","B","C","D","F","G","A","B","C","D","F","G","A","B","C","D","F","G")
+
+    override fun onClick(v: View?) {
+        when(v?.id){
+            R.id.btnMainLV -> {
+//                ListViewActivity.actionStart(this,data)
+                ListViewActivity.actionStart(this)
+            }
+            R.id.btnMainRV -> {
+                // RecyclerView
+                RecyclerViewActivity.actionStart(this)
+            }
+            R.id.btnMainChat -> {
+                // 聊天界面
+                ChatActivity.actionStart(this)
+            }
         }
     }
 

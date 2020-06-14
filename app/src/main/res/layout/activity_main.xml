@@ -20,4 +20,24 @@
         android:text="Button"
         android:id="@+id/btn_main"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="ListView"
+        android:id="@+id/btnMainLV"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="RecyclerView"
+        android:id="@+id/btnMainRV"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="ChatMsg"
+        android:id="@+id/btnMainChat"/>
+
 </LinearLayout>
