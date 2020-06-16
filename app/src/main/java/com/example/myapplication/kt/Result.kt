@@ -1,7 +1,6 @@
-package com.example.myapplication
+package com.example.myapplication.kt
 
 import java.lang.Exception
-import java.lang.IllegalArgumentException
 
 /**
  * 密封类示例：
@@ -33,7 +32,7 @@ sealed class Result
  * 密封类是一个可继承的类，因此在继承它的时候需要在后面添加括号
  */
 class Success(val msg:String) : Result()
-class Failure(val error:Exception) :Result()
+class Failure(val error:Exception) : Result()
 
 /**
  * 为什么没有 else 分支也能编译通过？

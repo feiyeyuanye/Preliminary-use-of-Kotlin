@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.myapplication">
 
+<!--  广播的权限  -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,34 +13,53 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!--    theme 对话框形式主题    -->
-        <activity android:name=".Main3Activity"
+
+<!--   exported 属性表示是否允许这个 BroadcastReceiver 接收本程序以外的广播     -->
+<!--   enabled 属性表示是否启用这个 BroadcastReceiver     -->
+        <receiver
+            android:name=".broadcast.BootCompleteReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <!-- theme 对话框形式主题 -->
+        <activity
+            android:name=".activity.Main3Activity"
             android:theme="@style/Theme.AppCompat.Dialog">
             <intent-filter tools:ignore="AppLinkUrlError">
-                <!--   tools:ignore="AppLinkUrlError"   忽略警告    -->
+
+                <!-- tools:ignore="AppLinkUrlError"   忽略警告 -->
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:scheme="https" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".Main2Activity">
+        <activity android:name=".activity.Main2Activity">
             <intent-filter>
+
                 <!-- 每个 Intent 中只能指定一个 action，但能指定多个 category。 -->
                 <action android:name="com.example.activitytest.ACTION_START" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="com.example.activitytest.MY_CATEGORY" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListViewActivity"/>
-        <activity android:name=".RecyclerViewActivity" />
-        <activity android:name=".ChatActivity" />
+        <activity android:name=".activity.ListViewActivity" />
+        <activity android:name=".activity.RecyclerViewActivity" />
+        <activity android:name=".activity.ChatActivity" />
+        <activity android:name=".activity.FragmentActivity" />
+        <activity android:name=".activity.BroadcastActivity" />
     </application>
 
 </manifest>

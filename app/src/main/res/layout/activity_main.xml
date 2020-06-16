@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".activity.MainActivity"
     android:orientation="vertical">
 
 <!--  使用自定义控件  -->
@@ -39,5 +39,16 @@
         android:textAllCaps="false"
         android:text="ChatMsg"
         android:id="@+id/btnMainChat"/>
-
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="Fragment"
+        android:id="@+id/btnFragment"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="BroadCast"
+        android:id="@+id/btnBroadCast"/>
 </LinearLayout>

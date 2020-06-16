@@ -1,10 +1,11 @@
-package com.example.myapplication
+package com.example.myapplication.activity
 
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
+import com.example.myapplication.R
 import com.example.myapplication.adapter.FruitLVAdapter
 import com.example.myapplication.base.BaseActivity
 import com.example.myapplication.bean.FruitBean
@@ -45,21 +46,37 @@ class ListViewActivity : BaseActivity(){
     private fun initFruit(){
         // repeat 函数会将表达式内的内容执行 2 遍。
         repeat(3){
-            fruitList.add(FruitBean("Apple",R.drawable.ic_launcher_background))
-            fruitList.add(FruitBean("Apple",R.drawable.ic_launcher_background))
-            fruitList.add(FruitBean("Apple",R.drawable.ic_launcher_background))
-            fruitList.add(FruitBean("Apple",R.drawable.ic_launcher_background))
-            fruitList.add(FruitBean("Apple",R.drawable.ic_launcher_background))
-            fruitList.add(FruitBean("Apple",R.drawable.ic_launcher_background))
-            fruitList.add(FruitBean("Apple",R.drawable.ic_launcher_background))
-            fruitList.add(FruitBean("Apple",R.drawable.ic_launcher_background))
+            fruitList.add(FruitBean("Apple",
+                R.drawable.ic_launcher_background
+            ))
+            fruitList.add(FruitBean("Apple",
+                R.drawable.ic_launcher_background
+            ))
+            fruitList.add(FruitBean("Apple",
+                R.drawable.ic_launcher_background
+            ))
+            fruitList.add(FruitBean("Apple",
+                R.drawable.ic_launcher_background
+            ))
+            fruitList.add(FruitBean("Apple",
+                R.drawable.ic_launcher_background
+            ))
+            fruitList.add(FruitBean("Apple",
+                R.drawable.ic_launcher_background
+            ))
+            fruitList.add(FruitBean("Apple",
+                R.drawable.ic_launcher_background
+            ))
+            fruitList.add(FruitBean("Apple",
+                R.drawable.ic_launcher_background
+            ))
         }
     }
 
 
     companion object{
         fun actionStart(context: Context){
-            val intent = Intent(context,ListViewActivity::class.java)
+            val intent = Intent(context, ListViewActivity::class.java)
             context.startActivity(intent)
         }
     }

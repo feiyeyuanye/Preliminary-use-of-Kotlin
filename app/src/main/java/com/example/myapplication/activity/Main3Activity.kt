@@ -1,6 +1,7 @@
-package com.example.myapplication
+package com.example.myapplication.activity
 
 import android.os.Bundle
+import com.example.myapplication.R
 import com.example.myapplication.base.BaseActivity
 import com.example.myapplication.utils.ActivityCollector
 import kotlinx.android.synthetic.main.activity_main3.*

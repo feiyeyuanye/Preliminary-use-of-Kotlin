@@ -1,14 +1,13 @@
-package com.example.myapplication
+package com.example.myapplication.activity
 
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import com.example.myapplication.R
 import com.example.myapplication.base.BaseActivity
-import com.example.myapplication.bean.FruitBean
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.ArrayList
 
 class MainActivity : BaseActivity(), View.OnClickListener {
 
@@ -27,7 +26,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
             // 界面跳转，显式 Intent
             val data = "Hello"
-            val intent = Intent(this,Main2Activity::class.java)
+            val intent = Intent(this, Main2Activity::class.java)
             // 传递参数
             intent.putExtra("extra_data",data)
 //            startActivity(intent)
@@ -54,11 +53,14 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         btnMainLV.setOnClickListener(this)
         btnMainRV.setOnClickListener(this)
         btnMainChat.setOnClickListener(this)
+        btnFragment.setOnClickListener(this)
+        btnBroadCast.setOnClickListener(this)
     }
 
 //    private val data = arrayListOf("A","B","C","D","F","G","A","B","C","D","F","G","A","B","C","D","F","G","A","B","C","D","F","G")
 
     override fun onClick(v: View?) {
+        // 不要忘记添加监听事件
         when(v?.id){
             R.id.btnMainLV -> {
 //                ListViewActivity.actionStart(this,data)
@@ -71,6 +73,12 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             R.id.btnMainChat -> {
                 // 聊天界面
                 ChatActivity.actionStart(this)
+            }
+            R.id.btnFragment -> {
+                FragmentActivity.actionStart(this)
+            }
+            R.id.btnBroadCast -> {
+                BroadcastActivity.actionStart(this)
             }
         }
     }
@@ -91,4 +99,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
         }
     }
+
+
 }

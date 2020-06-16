@@ -1,16 +1,15 @@
-package com.example.myapplication
+package com.example.myapplication.activity
 
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.widget.LinearLayout
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.example.myapplication.R
 import com.example.myapplication.adapter.FruitRVAdapter
 import com.example.myapplication.base.BaseActivity
 import com.example.myapplication.bean.FruitBean
+import com.example.myapplication.utils.times
 import kotlinx.android.synthetic.main.activity_rv.*
 import java.lang.StringBuilder
 import java.util.ArrayList
@@ -46,29 +45,50 @@ class RecyclerViewActivity : BaseActivity(){
     private fun initFruit(){
         // repeat 函数会将表达式内的内容执行 2 遍。
         repeat(3){
-            fruitList.add(FruitBean(getRandomLengthString("Apple"),R.drawable.ic_launcher_background))
-            fruitList.add(FruitBean(getRandomLengthString("Apple"),R.drawable.ic_launcher_background))
-            fruitList.add(FruitBean(getRandomLengthString("Apple"),R.drawable.ic_launcher_background))
-            fruitList.add(FruitBean(getRandomLengthString("Apple"),R.drawable.ic_launcher_background))
-            fruitList.add(FruitBean(getRandomLengthString("Apple"),R.drawable.ic_launcher_background))
-            fruitList.add(FruitBean(getRandomLengthString("Apple"),R.drawable.ic_launcher_background))
-            fruitList.add(FruitBean(getRandomLengthString("Apple"),R.drawable.ic_launcher_background))
-            fruitList.add(FruitBean(getRandomLengthString("Apple"),R.drawable.ic_launcher_background))
+            fruitList.add(FruitBean(getRandomLengthString("Apple"),
+                R.drawable.ic_launcher_background
+            ))
+            fruitList.add(FruitBean(getRandomLengthString("Apple"),
+                R.drawable.ic_launcher_background
+            ))
+            fruitList.add(FruitBean(getRandomLengthString("Apple"),
+                R.drawable.ic_launcher_background
+            ))
+            fruitList.add(FruitBean(getRandomLengthString("Apple"),
+                R.drawable.ic_launcher_background
+            ))
+            fruitList.add(FruitBean(getRandomLengthString("Apple"),
+                R.drawable.ic_launcher_background
+            ))
+            fruitList.add(FruitBean(getRandomLengthString("Apple"),
+                R.drawable.ic_launcher_background
+            ))
+            fruitList.add(FruitBean(getRandomLengthString("Apple"),
+                R.drawable.ic_launcher_background
+            ))
+            fruitList.add(FruitBean(getRandomLengthString("Apple"),
+                R.drawable.ic_launcher_background
+            ))
         }
     }
 
-    private fun getRandomLengthString(str:String):String{
-        val n = (1..20).random()
-        val builder = StringBuilder()
-        repeat(n){
-            builder.append(str)
-        }
-        return builder.toString()
-    }
+//    private fun getRandomLengthString(str:String):String{
+//        val n = (1..20).random()
+//        val builder = StringBuilder()
+//        repeat(n){
+//            builder.append(str)
+//        }
+//        return builder.toString()
+//    }
+    /**
+     * 使用扩展函数和运算符重载的功能，来实现上面函数的效果
+     * 字符串有了和数字相乘的能力
+     */
+    private fun getRandomLengthString(str:String) = str * (1..20).random()
 
     companion object{
         fun actionStart(context: Context){
-            val intent = Intent(context,RecyclerViewActivity::class.java)
+            val intent = Intent(context, RecyclerViewActivity::class.java)
             context.startActivity(intent)
         }
     }

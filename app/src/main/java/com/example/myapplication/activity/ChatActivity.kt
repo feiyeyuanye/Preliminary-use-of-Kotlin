@@ -1,10 +1,11 @@
-package com.example.myapplication
+package com.example.myapplication.activity
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.myapplication.R
 import com.example.myapplication.adapter.MsgAdapter
 import com.example.myapplication.base.BaseActivity
 import com.example.myapplication.bean.ChatMsgBean
@@ -69,7 +70,7 @@ class ChatActivity:BaseActivity(), View.OnClickListener {
 
     companion object{
         fun actionStart(context: Context){
-            val intent = Intent(context,ChatActivity::class.java)
+            val intent = Intent(context, ChatActivity::class.java)
             context.startActivity(intent)
         }
     }

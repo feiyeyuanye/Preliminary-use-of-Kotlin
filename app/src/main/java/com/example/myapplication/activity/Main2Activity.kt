@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.activity
 
 import android.app.Activity
 import android.content.Context
@@ -6,6 +6,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import com.example.myapplication.R
 import com.example.myapplication.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_main2.*
 
@@ -52,7 +53,7 @@ class Main2Activity : BaseActivity(), View.OnClickListener {
 //            intent.putExtra("param2",data2)
 //            context.startActivity(intent)
 
-            val intent = Intent(context,Main2Activity::class.java).apply {
+            val intent = Intent(context, Main2Activity::class.java).apply {
                 putExtra("param1",data1)
                 putExtra("param2",data2)
             }
