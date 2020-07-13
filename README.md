@@ -18,6 +18,7 @@ Kotlin 的语法练习（第三行代码）
 - [x] 第六章 全局大喇叭，详解广播机制
  - [BroadcastActivity](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/blob/master/app/src/main/java/com/example/myapplication/activity/BroadcastActivity.kt)
 - [ ] 第七章 数据存储全方案，详解持久化技术
+ -[FileActivity](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/blob/master/app/src/main/java/com/example/myapplication/activity/FileActivity.kt)
 - [ ] 第八章 跨进程共享数据，探究 ContentProvider
 - [ ] 第九章 丰富你的程序，运用手机多媒体
 - [ ] 第十章 后台默默的劳动者，探究 Service
