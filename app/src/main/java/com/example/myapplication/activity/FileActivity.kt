@@ -34,7 +34,7 @@ class FileActivity :BaseActivity() {
         val content = StringBuilder()
         try {
             val input = openFileInput("data")
-            
+
         }
     }
 
