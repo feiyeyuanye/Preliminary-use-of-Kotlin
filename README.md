@@ -7,8 +7,8 @@ Kotlin 的语法练习（第三行代码）
 - [x] 第三章 先从看得到的入手，探究 Activity
  - [MainActivity](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/blob/master/app/src/main/java/com/example/myapplication/activity/MainActivity.kt)
  - [Main2Activity](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/blob/master/app/src/main/java/com/example/myapplication/activity/Main2Activity.kt)
- - [Main3Activity](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/blob/master/app/src/main/java/com/example/myapplication/activity/Main3Activity.kt)
- - [LifeCycleActivity](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/blob/master/app/src/main/java/com/example/myapplication/activity/LifeCycleActivity.kt)
+ - [退出程序](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/blob/master/app/src/main/java/com/example/myapplication/activity/Main3Activity.kt)
+ - [生命周期](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/blob/master/app/src/main/java/com/example/myapplication/activity/LifeCycleActivity.kt)
 - [x] 第四章 软件也要拼脸蛋，UI 开发的点点滴滴
  - [ListViewActivity](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/blob/master/app/src/main/java/com/example/myapplication/activity/ListViewActivity.kt)
  - [RecyclerViewActivity](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/blob/master/app/src/main/java/com/example/myapplication/activity/RecyclerViewActivity.kt)
