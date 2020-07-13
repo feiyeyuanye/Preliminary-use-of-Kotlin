@@ -3,15 +3,12 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
+    <EditText
+        android:id="@+id/et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Send Broadcast"
-        android:id="@+id/btnSendBR" />
+        android:hint="Type something here" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Send force offline broadcast"
-        android:id="@+id/btnForce" />
+
+
 </LinearLayout>

@@ -2,7 +2,9 @@ package com.example.myapplication.activity
 
 import android.app.Activity
 import android.content.Intent
+import android.content.res.Resources
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.util.Log
 import android.view.View
 import com.example.myapplication.R
@@ -55,6 +57,12 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         btnMainChat.setOnClickListener(this)
         btnFragment.setOnClickListener(this)
         btnBroadCast.setOnClickListener(this)
+        // 保存在内存中的数据是处于瞬时状态的，而保存在存储设备中的数据是处于持久状态的。
+        // 持久化技术提供了一种机制，可以让数据在瞬时状态和持久状态之间进行转换。
+        // Android 系统中主要提供了 3 中方式用于简单地实现数据持久化功能：
+        // 文件存储、SharedPreferences 存储、数据库存储。
+        btnFile.setOnClickListener(this)
+
     }
 
 //    private val data = arrayListOf("A","B","C","D","F","G","A","B","C","D","F","G","A","B","C","D","F","G","A","B","C","D","F","G")
@@ -80,6 +88,9 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             R.id.btnBroadCast -> {
                 BroadcastActivity.actionStart(this)
             }
+            R.id.btnFile ->{
+                FileActivity.actionStart(this)
+            }
         }
     }
 
@@ -99,6 +110,4 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
         }
     }
-
-
 }

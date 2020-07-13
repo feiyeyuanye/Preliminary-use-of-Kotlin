@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.myapplication.R
 import com.example.myapplication.base.BaseActivity
+import kotlinx.android.synthetic.main.activity_broadcast.*
 
 /**
  * 在一个 IP 网络范围中，最大的 IP 地址是被保留作为广播地址来使用的。
@@ -41,11 +42,42 @@ class BroadcastActivity :BaseActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_broadcast)
+
+        // 发送自定义广播
+        btnSendBR.setOnClickListener{
+            // 静态注册
+            val intent = Intent("com.example.myapplication.broadcast.MY_BROADCAST")
+            // Android 8.0 后，静态注册的 BroadcastReceiver 是无法接收隐式广播的，
+            // 而默认情况下发出的自定义广播恰恰都是隐式广播。
+            // 因此这里调用 setPackage() 指定这条广播是发送给哪个应用程序的，从而让它变成一条显式广播。
+            // packageName 是 getPackageName() 的语法糖写法，用于获取当前应用的包名。
+            intent.setPackage(packageName)
+            // 因为是通过 intent 发送的，还可以如 Activity 一般携带一些数据。
+            // 发送标准广播（无序广播）
+//            sendBroadcast(intent)
+            // 发送有序广播,第二个参数是一个与权限相关的字符串，传入 null 即可。
+            // <intent-filter android:priority="100"> 指定优先级，优先级高的先收到广播
+            // onReceive() 中调用 abortBroadcast() 可以拦截广播。
+            sendOrderedBroadcast(intent,null)
+        }
+
+        // 动态注册
         val intentFilter = IntentFilter()
         // 当系统时间发生变化时，每隔一分钟，系统发出的正是一条值为 android.intent.action.TIME_TICK 的广播
         intentFilter.addAction("android.intent.action.TIME_TICK")
         timeChangeReceiver = TimeChangeReceiver()
         registerReceiver(timeChangeReceiver,intentFilter)
+
+        // 实现强制下线功能
+        btnForce.setOnClickListener{
+            // 这条广播就是用于通知程序强制下线的。
+            // 强制下线的逻辑并不写在这里，而应该写在接收这条广播的 BroadcastReceiver 里，
+            // 这样强制下线的功能就不会依附于任何界面了。
+            // 由于 BR 中需要弹框来阻塞用户操作，而静态的 BR 是没办法在 onReceive() 里弹出对话框这样的 UI 控件的，
+            // 但又不能在每个 Activity 中都注册一个动态的 BR，所以只需要在 BaseActivity() 动态注册一个 BR 即可。
+            val intent = Intent("com.example.broadcast.FORCE_OFFLINE")
+            sendBroadcast(intent)
+        }
     }
 
     inner class TimeChangeReceiver:BroadcastReceiver(){

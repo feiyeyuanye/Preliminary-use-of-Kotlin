@@ -3,7 +3,7 @@ package com.example.myapplication.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.activity.MsgViewHolder
+import com.example.myapplication.utils.MsgViewHolder
 import com.example.myapplication.R
 import com.example.myapplication.bean.ChatMsgBean
 

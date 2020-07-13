@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.myapplication">
 
-<!--  广播的权限  -->
+    <!-- 广播的权限 -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
@@ -13,9 +13,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-<!--   exported 属性表示是否允许这个 BroadcastReceiver 接收本程序以外的广播     -->
-<!--   enabled 属性表示是否启用这个 BroadcastReceiver     -->
+        <receiver
+            android:name=".broadcast.MyReceiver"
+            android:enabled="true"
+            android:exported="true">
+<!--   android:priority="100" 指定有序广播的优先级         -->
+            <intent-filter android:priority="100">
+                <action android:name="com.example.myapplication.broadcast.MY_BROADCAST" />
+            </intent-filter>
+        </receiver>
+        <!-- exported 属性表示是否允许这个 BroadcastReceiver 接收本程序以外的广播 -->
+        <!-- enabled 属性表示是否启用这个 BroadcastReceiver -->
         <receiver
             android:name=".broadcast.BootCompleteReceiver"
             android:enabled="true"
@@ -23,8 +31,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
-        </receiver>
-        <!-- theme 对话框形式主题 -->
+        </receiver> <!-- theme 对话框形式主题 -->
         <activity
             android:name=".activity.Main3Activity"
             android:theme="@style/Theme.AppCompat.Dialog">
@@ -60,6 +67,7 @@
         <activity android:name=".activity.ChatActivity" />
         <activity android:name=".activity.FragmentActivity" />
         <activity android:name=".activity.BroadcastActivity" />
+        <activity android:name=".activity.FileActivity"/>
     </application>
 
 </manifest>
