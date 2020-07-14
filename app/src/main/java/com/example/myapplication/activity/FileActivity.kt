@@ -3,12 +3,11 @@ package com.example.myapplication.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import com.example.myapplication.R
 import com.example.myapplication.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_file.*
-import java.io.BufferedWriter
-import java.io.IOException
-import java.io.OutputStreamWriter
+import java.io.*
 import java.lang.StringBuilder
 
 
@@ -26,16 +25,40 @@ class FileActivity :BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_file)
 
+        // 从文件中读取数据
         val inputText = load()
-
+        if (inputText.isNotEmpty()){
+            et.setText(inputText)
+            // 将光标移动到末尾
+            et.setSelection(inputText.length)
+            Toast.makeText(this,"Restoring succeeded",Toast.LENGTH_SHORT).show()
+        }
     }
 
+    /**
+     * Context 类中提供了一个 openFileInput() 用于从文件中读取数据，它接收一个参数，即要读取的文件名。
+     */
     private fun load(): String {
         val content = StringBuilder()
+        // FileInputStream -> InputStreamReader -> BufferedReader
         try {
+            // 返回一个 FileInputStream 对象
             val input = openFileInput("data")
-
+            // 借助 FileInputStream 构建出一个 InputStreamReader 对象，
+            // 接着使用 InputStreamReader 构建出一个 BufferedReader 对象，
+            // 然后通过 BufferedReader 将文件中的数据一行行读取出来，拼接到 SB 对象当中。
+            val reader = BufferedReader(InputStreamReader(input))
+            reader.use{
+                // forEachLine 函数也是 Kotlin 提供的一个内置扩展函数
+                // 它会将读取到的每行内容都回调到 Lambda 表达式中，然后在表达式中完成拼接即可。
+                reader.forEachLine {
+                    content.append(it)
+                }
+            }
+        }catch (e: IOException){
+            e.printStackTrace()
         }
+        return content.toString()
     }
 
 

@@ -62,6 +62,8 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         // Android 系统中主要提供了 3 中方式用于简单地实现数据持久化功能：
         // 文件存储、SharedPreferences 存储、数据库存储。
         btnFile.setOnClickListener(this)
+        btnSP.setOnClickListener(this)
+        btnSQLite.setOnClickListener(this)
 
     }
 
@@ -90,6 +92,12 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
             R.id.btnFile ->{
                 FileActivity.actionStart(this)
+            }
+            R.id.btnSP ->{
+                SharedPreferencesActivity.actionStart(this)
+            }
+            R.id.btnSQLite ->{
+                SQLiteActivity.actionStart(this)
             }
         }
     }

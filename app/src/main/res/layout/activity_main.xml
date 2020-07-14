@@ -57,4 +57,16 @@
         android:textAllCaps="false"
         android:text="File"
         android:id="@+id/btnFile"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="SharedPreferences"
+        android:id="@+id/btnSP"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="SQLite"
+        android:id="@+id/btnSQLite"/>
 </LinearLayout>

@@ -21,7 +21,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    // 解决：无法将使用JVM target 1.8构建的字节码内联到使用JVM target 1.6构建的字节码中
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])

@@ -68,6 +68,8 @@
         <activity android:name=".activity.FragmentActivity" />
         <activity android:name=".activity.BroadcastActivity" />
         <activity android:name=".activity.FileActivity"/>
+        <activity android:name=".activity.SharedPreferencesActivity"/>
+        <activity android:name=".activity.SQLiteActivity" />
     </application>
 
 </manifest>
