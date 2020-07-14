@@ -29,3 +29,5 @@ Kotlin 的语法练习（第三行代码）
 - [ ] 第十五章 进入实战，开发一个天气预报 App
 - [ ] 第十六章 编写并发布一个开源库，PermissionX
 - [x] [Git 版本控制工具](https://jianghouren.com/archives/15f503f8.html)
+
+注：因为书买的早，所以还需要一些勘误的地方。
