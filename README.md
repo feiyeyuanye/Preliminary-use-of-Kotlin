@@ -17,9 +17,16 @@ Kotlin 的语法练习（第三行代码）
  - [FragmentActivity](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/blob/master/app/src/main/java/com/example/myapplication/activity/FragmentActivity.kt)
 - [x] 第六章 全局大喇叭，详解广播机制
  - [BroadcastActivity](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/blob/master/app/src/main/java/com/example/myapplication/activity/BroadcastActivity.kt)
-- [ ] 第七章 数据存储全方案，详解持久化技术
+- [x] 第七章 数据存储全方案，详解持久化技术
  - [FileActivity](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/blob/master/app/src/main/java/com/example/myapplication/activity/FileActivity.kt)
-- [ ] 第八章 跨进程共享数据，探究 ContentProvider
+ - [SharedPreferences](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/blob/master/app/src/main/java/com/example/myapplication/activity/SharedPreferencesActivity.kt)
+ - [SQLite](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/blob/master/app/src/main/java/com/example/myapplication/activity/SQLiteActivity.kt)
+ - [MyDatabaseHelper](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/blob/master/app/src/main/java/com/example/myapplication/db/MyDatabaseHelper.kt)
+- [x] 第八章 跨进程共享数据，探究 ContentProvider
+ - [Permission](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/blob/master/app/src/main/java/com/example/myapplication/activity/PermissionActivity.kt)
+ - [ContentProvider](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/blob/master/app/src/main/java/com/example/myapplication/activity/ContentProviderActivity.kt)
+ - [MyProvider](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/blob/master/app/src/main/java/com/example/myapplication/activity/MyProvider.kt)
+ - [DatabaseProvider](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/blob/master/app/src/main/java/com/example/myapplication/activity/DatabaseProvider.kt)
 - [ ] 第九章 丰富你的程序，运用手机多媒体
 - [ ] 第十章 后台默默的劳动者，探究 Service
 - [ ] 第十一章 看看精彩的世界，使用网络技术
