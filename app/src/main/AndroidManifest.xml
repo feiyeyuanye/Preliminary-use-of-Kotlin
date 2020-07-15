@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.myapplication">
 
-    <!-- 广播的权限 -->
+    <!-- 拨打电话 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" /> <!-- 读取系统联系人 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" /> <!-- 广播的权限 -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
@@ -13,16 +15,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <provider
+            android:name=".activity.DatabaseProvider"
+            android:authorities="com.example.databasetest.provider"
+            android:enabled="true"
+            android:exported="true"></provider>
+        <!-- exported: 是否允许外部程序访问我们的 CP，enabled：表示是否启用这个 CP。 -->
+        <provider
+            android:name=".activity.MyProvider"
+            android:authorities="com.example.myapplication.provider"
+            android:enabled="true"
+            android:exported="true" />
+
         <receiver
             android:name=".broadcast.MyReceiver"
             android:enabled="true"
             android:exported="true">
-<!--   android:priority="100" 指定有序广播的优先级         -->
+
+            <!-- android:priority="100" 指定有序广播的优先级 -->
             <intent-filter android:priority="100">
                 <action android:name="com.example.myapplication.broadcast.MY_BROADCAST" />
             </intent-filter>
-        </receiver>
-        <!-- exported 属性表示是否允许这个 BroadcastReceiver 接收本程序以外的广播 -->
+        </receiver> <!-- exported 属性表示是否允许这个 BroadcastReceiver 接收本程序以外的广播 -->
         <!-- enabled 属性表示是否启用这个 BroadcastReceiver -->
         <receiver
             android:name=".broadcast.BootCompleteReceiver"
@@ -67,9 +81,11 @@
         <activity android:name=".activity.ChatActivity" />
         <activity android:name=".activity.FragmentActivity" />
         <activity android:name=".activity.BroadcastActivity" />
-        <activity android:name=".activity.FileActivity"/>
-        <activity android:name=".activity.SharedPreferencesActivity"/>
+        <activity android:name=".activity.FileActivity" />
+        <activity android:name=".activity.SharedPreferencesActivity" />
         <activity android:name=".activity.SQLiteActivity" />
+        <activity android:name=".activity.PermissionActivity" />
+        <activity android:name=".activity.ContentProviderActivity" />
     </application>
 
 </manifest>

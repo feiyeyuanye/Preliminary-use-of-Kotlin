@@ -44,7 +44,9 @@ class MyDatabaseHelper(val context: Context, name:String, version:Int):
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL(createBook)
         db.execSQL(createCategory)
-        Toast.makeText(context,"Create succeeded",Toast.LENGTH_SHORT).show()
+
+//        跨进程访问时不能直接使用 Toast
+//        Toast.makeText(context,"Create succeeded",Toast.LENGTH_SHORT).show()
     }
 
 

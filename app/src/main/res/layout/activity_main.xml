@@ -69,4 +69,16 @@
         android:textAllCaps="false"
         android:text="SQLite"
         android:id="@+id/btnSQLite"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="Permission"
+        android:id="@+id/btnPermission"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="ContentProvider"
+        android:id="@+id/btnCP"/>
 </LinearLayout>

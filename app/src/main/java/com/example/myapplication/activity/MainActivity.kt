@@ -64,6 +64,10 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         btnFile.setOnClickListener(this)
         btnSP.setOnClickListener(this)
         btnSQLite.setOnClickListener(this)
+        // 动态权限
+        btnPermission.setOnClickListener(this)
+        // 跨程序共享数据
+        btnCP.setOnClickListener(this)
 
     }
 
@@ -98,6 +102,12 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
             R.id.btnSQLite ->{
                 SQLiteActivity.actionStart(this)
+            }
+            R.id.btnPermission ->{
+                PermissionActivity.actionStart(this)
+            }
+            R.id.btnCP ->{
+                ContentProviderActivity.actionStart(this)
             }
         }
     }
