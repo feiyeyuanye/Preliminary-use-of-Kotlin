@@ -86,6 +86,7 @@
         <activity android:name=".activity.SQLiteActivity" />
         <activity android:name=".activity.PermissionActivity" />
         <activity android:name=".activity.ContentProviderActivity" />
+        <activity android:name=".activity.NotificationActivity" />
     </application>
 
 </manifest>

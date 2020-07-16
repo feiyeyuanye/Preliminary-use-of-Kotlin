@@ -21,3 +21,6 @@ import java.lang.StringBuilder
  * 打印结果：abcabcabc
  */
 operator fun String.times(n:Int) = repeat(n)
+
+
+

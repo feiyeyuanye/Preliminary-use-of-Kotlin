@@ -68,6 +68,8 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         btnPermission.setOnClickListener(this)
         // 跨程序共享数据
         btnCP.setOnClickListener(this)
+        // 通知
+        btnNoti.setOnClickListener(this)
 
     }
 
@@ -108,6 +110,9 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
             R.id.btnCP ->{
                 ContentProviderActivity.actionStart(this)
+            }
+            R.id.btnNoti ->{
+                NotificationActivity.actionStart(this)
             }
         }
     }
