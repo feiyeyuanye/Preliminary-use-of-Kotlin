@@ -87,4 +87,10 @@
         android:textAllCaps="false"
         android:text="Notification"
         android:id="@+id/btnNoti"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="Camera"
+        android:id="@+id/btnCamera"/>
 </LinearLayout>

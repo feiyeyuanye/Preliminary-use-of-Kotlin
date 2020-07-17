@@ -15,11 +15,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <!--  name 的属性是固定的，authorities 的值必须一致。  -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.myapplication.fileprovider"
+            android:grantUriPermissions="true"
+            android:exported="false">
+           <!--  meta-data 指定 Uri 的共享路径，并引用了一个 @xml/file_paths 资源。        -->
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
         <provider
             android:name=".activity.DatabaseProvider"
             android:authorities="com.example.databasetest.provider"
             android:enabled="true"
-            android:exported="true"></provider>
+            android:exported="true">
+
+        </provider>
         <!-- exported: 是否允许外部程序访问我们的 CP，enabled：表示是否启用这个 CP。 -->
         <provider
             android:name=".activity.MyProvider"
@@ -87,6 +100,7 @@
         <activity android:name=".activity.PermissionActivity" />
         <activity android:name=".activity.ContentProviderActivity" />
         <activity android:name=".activity.NotificationActivity" />
+        <activity android:name=".activity.CameraAlbumActivity"/>
     </application>
 
 </manifest>

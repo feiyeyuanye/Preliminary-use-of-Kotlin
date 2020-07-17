@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.example.myapplication.R
 import com.example.myapplication.bean.FruitBean
+import kotlinx.android.synthetic.main.item_fruit.view.*
 
 class FruitLVAdapter(activity:Activity, val resourceId:Int, data:ArrayList<FruitBean>):
 ArrayAdapter<FruitBean>(activity,resourceId,data){
@@ -35,8 +36,11 @@ ArrayAdapter<FruitBean>(activity,resourceId,data){
             view = LayoutInflater.from(context).inflate(resourceId,parent,false)
 
             // 'kotlin-android-extensions' 插件在适配器中是无法工作的。
-            val ivItemFruit : ImageView = view.findViewById(R.id.ivItemFruit)
-            val tvItemFruit : TextView = view.findViewById(R.id.tvItemFruit)
+//            val ivItemFruit : ImageView = view.findViewById(R.id.ivItemFruit)
+//            val tvItemFruit : TextView = view.findViewById(R.id.tvItemFruit)
+            // 勘误：'kotlin-android-extensions' 插件在适配器中也能正常工作。
+            val ivItemFruit : ImageView = view.ivItemFruit
+            val tvItemFruit : TextView = view.tvItemFruit
             viewHolder = ViewHolder(ivItemFruit ,tvItemFruit)
             view.tag = viewHolder
         }else{

@@ -70,6 +70,8 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         btnCP.setOnClickListener(this)
         // 通知
         btnNoti.setOnClickListener(this)
+        // 摄像头
+        btnCamera.setOnClickListener(this)
 
     }
 
@@ -113,6 +115,9 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
             R.id.btnNoti ->{
                 NotificationActivity.actionStart(this)
+            }
+            R.id.btnCamera ->{
+                CameraAlbumActivity.actionStart(this)
             }
         }
     }
