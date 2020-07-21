@@ -11,6 +11,14 @@
     <com.example.myapplication.view.TitleLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
 <!--  android:textAllCaps="false" 取消默认的字母全部大写  -->
     <Button
@@ -93,4 +101,33 @@
         android:textAllCaps="false"
         android:text="Camera"
         android:id="@+id/btnCamera"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="Play"
+        android:id="@+id/btnPlay"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="Thread"
+        android:id="@+id/btnThread"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="Service"
+                android:id="@+id/btnService"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="Network"
+                android:id="@+id/btnNetwork"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+
 </LinearLayout>

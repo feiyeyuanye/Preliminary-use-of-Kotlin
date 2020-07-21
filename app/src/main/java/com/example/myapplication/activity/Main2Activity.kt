@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.View
 import com.example.myapplication.R
 import com.example.myapplication.base.BaseActivity
+import com.example.myapplication.kt.startActivity
 import kotlinx.android.synthetic.main.activity_main2.*
 
 class Main2Activity : BaseActivity(), View.OnClickListener {
@@ -53,11 +54,17 @@ class Main2Activity : BaseActivity(), View.OnClickListener {
 //            intent.putExtra("param2",data2)
 //            context.startActivity(intent)
 
-            val intent = Intent(context, Main2Activity::class.java).apply {
+//            val intent = Intent(context, Main2Activity::class.java).apply {
+//                putExtra("param1",data1)
+//                putExtra("param2",data2)
+//            }
+//            context.startActivity(intent)
+
+            // 使用泛型实化来简化代码
+            startActivity<Main2Activity>(context){
                 putExtra("param1",data1)
                 putExtra("param2",data2)
             }
-            context.startActivity(intent)
         }
     }
 

@@ -27,6 +27,11 @@ class CameraAlbumActivity : BaseActivity() {
     lateinit var imageUri: Uri
     lateinit var outputImage: File
 
+    /**
+     * 调用相册
+     */
+    val fromAlbum = 2
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cemara)
@@ -43,6 +48,21 @@ class CameraAlbumActivity : BaseActivity() {
 
     private fun initData() {
         takePhoto()
+        fromAlbum()
+    }
+
+    /**
+     * 调用相册
+     */
+    private fun fromAlbum(){
+        btnFromAlbum.setOnClickListener{
+            // 打开系统的文件选择器
+            val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
+            intent.addCategory(Intent.CATEGORY_OPENABLE)
+            // 指定只显示图片，过滤条件
+            intent.type = "image/*"
+            startActivityForResult(intent,fromAlbum)
+        }
     }
 
     /**
@@ -92,7 +112,20 @@ class CameraAlbumActivity : BaseActivity() {
                     ivPhoto.setImageBitmap(rotateIfRequired(bitmap))
                 }
             }
+            fromAlbum -> {
+                if (resultCode == Activity.RESULT_OK && data != null){
+                    data.data?.let { uri ->
+                        // 将选择的图片显示
+                        val bitmap = getBitmapFromUri(uri)
+                        ivPhoto.setImageBitmap(bitmap)
+                    }
+                }
+            }
         }
+    }
+
+    private fun getBitmapFromUri(uri: Uri) = contentResolver.openFileDescriptor(uri,"r")?.use {
+        BitmapFactory.decodeFileDescriptor(it.fileDescriptor)
     }
 
     /**

@@ -2,9 +2,7 @@ package com.example.myapplication.activity
 
 import android.app.Activity
 import android.content.Intent
-import android.content.res.Resources
 import android.os.Bundle
-import android.util.DisplayMetrics
 import android.util.Log
 import android.view.View
 import com.example.myapplication.R
@@ -72,7 +70,13 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         btnNoti.setOnClickListener(this)
         // 摄像头
         btnCamera.setOnClickListener(this)
-
+        // 音频，视频
+        btnPlay.setOnClickListener(this)
+        // Service
+        btnThread.setOnClickListener(this)
+        btnService.setOnClickListener(this)
+        // 网络技术
+        btnNetwork.setOnClickListener(this)
     }
 
 //    private val data = arrayListOf("A","B","C","D","F","G","A","B","C","D","F","G","A","B","C","D","F","G","A","B","C","D","F","G")
@@ -118,6 +122,18 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
             R.id.btnCamera ->{
                 CameraAlbumActivity.actionStart(this)
+            }
+            R.id.btnPlay ->{
+                PlayActivity.actionStart(this)
+            }
+            R.id.btnThread ->{
+                ThreadActivity.actionStart(this)
+            }
+            R.id.btnService ->{
+                ServiceActivity.actionStart(this)
+            }
+            R.id.btnNetwork ->{
+                NetworkActivity.actionStart(this)
             }
         }
     }
