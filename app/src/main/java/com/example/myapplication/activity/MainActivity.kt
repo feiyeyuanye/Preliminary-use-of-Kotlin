@@ -77,6 +77,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         btnService.setOnClickListener(this)
         // 网络技术
         btnNetwork.setOnClickListener(this)
+        btnRetrofit.setOnClickListener(this)
     }
 
 //    private val data = arrayListOf("A","B","C","D","F","G","A","B","C","D","F","G","A","B","C","D","F","G","A","B","C","D","F","G")
@@ -134,6 +135,9 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
             R.id.btnNetwork ->{
                 NetworkActivity.actionStart(this)
+            }
+            R.id.btnRetrofit ->{
+                RetrofitActivity.actionStart(this)
             }
         }
     }

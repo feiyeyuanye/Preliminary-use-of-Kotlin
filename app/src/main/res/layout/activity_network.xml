@@ -8,7 +8,31 @@
         android:layout_height="wrap_content"
         android:id="@+id/btnRequest"
         android:text="Send Request"/>
-
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnOkHttp"
+        android:text="OkHttp Request"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnPull"
+        android:text="Pull XML"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSAX"
+        android:text="SAX XML"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnJSONObject"
+        android:text="JSONObject"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnGSON"
+        android:text="GSON"/>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">

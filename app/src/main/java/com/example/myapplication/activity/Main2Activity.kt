@@ -21,13 +21,7 @@ class Main2Activity : BaseActivity(), View.OnClickListener {
         val extraData = intent.getStringExtra("extra_data")
         Log.d("TAG_Main2Activity","extra data is $extraData")
 
-        // 返回数据给上一个页面
-//        btn_main2.setOnClickListener{
-//            val intent = Intent()
-//            intent.putExtra("data_return","Hello MainActivity")
-//            setResult(Activity.RESULT_OK,intent)
-//            finish()
-//        }
+
         btn_main2.setOnClickListener(this)
     }
 

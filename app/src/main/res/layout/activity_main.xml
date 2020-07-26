@@ -125,6 +125,12 @@
                 android:textAllCaps="false"
                 android:text="Network"
                 android:id="@+id/btnNetwork"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="Retrofit"
+                android:id="@+id/btnRetrofit"/>
 
         </LinearLayout>
     </ScrollView>
