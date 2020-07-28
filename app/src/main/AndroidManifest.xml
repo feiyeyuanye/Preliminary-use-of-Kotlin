@@ -9,12 +9,11 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <!-- 前台 Service    -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
-
     <!-- 网络技术 -->
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
-        android:name=".MyApplication"
+        android:name=".config.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -22,6 +21,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:networkSecurityConfig="@xml/network_config">
+
 <!--  enabled：是否启用此 Service， exported：是否将此 Service 暴露给外部其它程序访问。     -->
         <service
             android:name=".service.MyService"
@@ -31,6 +31,7 @@
             android:name=".service.MyIntentService"
             android:enabled="true"
             android:exported="true"></service>
+
         <!-- name 的属性是固定的，authorities 的值必须一致。 -->
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -44,12 +45,12 @@
                 android:resource="@xml/file_paths" />
         </provider>
         <provider
-            android:name=".activity.DatabaseProvider"
+            android:name=".contentprovider.DatabaseProvider"
             android:authorities="com.example.databasetest.provider"
             android:enabled="true"
             android:exported="true"></provider> <!-- exported: 是否允许外部程序访问我们的 CP，enabled：表示是否启用这个 CP。 -->
         <provider
-            android:name=".activity.MyProvider"
+            android:name=".contentprovider.MyProvider"
             android:authorities="com.example.myapplication.provider"
             android:enabled="true"
             android:exported="true" />
@@ -104,23 +105,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.ListViewActivity" />
-        <activity android:name=".activity.RecyclerViewActivity" />
-        <activity android:name=".activity.ChatActivity" />
-        <activity android:name=".activity.FragmentActivity" />
-        <activity android:name=".activity.BroadcastActivity" />
-        <activity android:name=".activity.FileActivity" />
-        <activity android:name=".activity.SharedPreferencesActivity" />
-        <activity android:name=".activity.SQLiteActivity" />
-        <activity android:name=".activity.PermissionActivity" />
-        <activity android:name=".activity.ContentProviderActivity" />
-        <activity android:name=".activity.NotificationActivity" />
-        <activity android:name=".activity.CameraAlbumActivity" />
-        <activity android:name=".activity.PlayActivity" />
-        <activity android:name=".activity.ThreadActivity" />
-        <activity android:name=".activity.ServiceActivity" />
-        <activity android:name=".activity.NetworkActivity"/>
-        <activity android:name=".activity.RetrofitActivity"/>
+        <activity android:name=".ui.ListViewActivity" />
+        <activity android:name=".ui.RecyclerViewActivity" />
+        <activity android:name=".ui.ChatActivity" />
+        <activity android:name=".fragment.FragmentActivity" />
+        <activity android:name=".broadcast.BroadcastActivity" />
+        <activity android:name=".storage.FileActivity" />
+        <activity android:name=".storage.SharedPreferencesActivity" />
+        <activity android:name=".storage.SQLiteActivity" />
+        <activity android:name=".contentprovider.PermissionActivity" />
+        <activity android:name=".contentprovider.ContentProviderActivity" />
+        <activity android:name=".multimedia.NotificationActivity" />
+        <activity android:name=".multimedia.CameraAlbumActivity" />
+        <activity android:name=".multimedia.PlayActivity" />
+        <activity android:name=".service.ThreadActivity" />
+        <activity android:name=".service.ServiceActivity" />
+        <activity android:name=".network.NetworkActivity"/>
+        <activity android:name=".network.RetrofitActivity"/>
     </application>
 
 </manifest>

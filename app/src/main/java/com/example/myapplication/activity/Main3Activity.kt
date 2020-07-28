@@ -3,7 +3,7 @@ package com.example.myapplication.activity
 import android.os.Bundle
 import com.example.myapplication.R
 import com.example.myapplication.base.BaseActivity
-import com.example.myapplication.utils.ActivityCollector
+import com.example.myapplication.base.ActivityCollector
 import kotlinx.android.synthetic.main.activity_main3.*
 
 class Main3Activity : BaseActivity() {
@@ -11,7 +11,9 @@ class Main3Activity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main3)
+
         btn_main3.setOnClickListener{
+
             // 退出程序
             ActivityCollector.finishAll()
             // 还可以在销毁所以 Activity 的代码后面再加上杀掉当前进程的代码，以保证程序完全退出

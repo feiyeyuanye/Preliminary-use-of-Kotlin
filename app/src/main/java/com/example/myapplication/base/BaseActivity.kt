@@ -9,7 +9,6 @@ import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.activity.MainActivity
-import com.example.myapplication.utils.ActivityCollector
 
 open class BaseActivity : AppCompatActivity() {
 
@@ -17,6 +16,7 @@ open class BaseActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         // 隐藏标题栏：调用 getSupprotActionBar 获得 ActionBar 的实例，并隐藏。
         supportActionBar?.hide()
 
@@ -27,6 +27,9 @@ open class BaseActivity : AppCompatActivity() {
         ActivityCollector.addActivity(this)
     }
 
+    /**
+     * 通过广播，实现强制下线功能。
+     */
     inner class ForceOfflineReceiver:BroadcastReceiver(){
         override fun onReceive(context: Context, intent: Intent?) {
             AlertDialog.Builder(context).apply {

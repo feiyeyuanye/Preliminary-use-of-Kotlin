@@ -21,7 +21,7 @@ Kotlin 的语法练习（第三行代码）
  - [FileActivity](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/blob/master/app/src/main/java/com/example/myapplication/activity/FileActivity.kt)
  - [SharedPreferences](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/blob/master/app/src/main/java/com/example/myapplication/activity/SharedPreferencesActivity.kt)
  - [SQLite](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/blob/master/app/src/main/java/com/example/myapplication/activity/SQLiteActivity.kt)
- - [MyDatabaseHelper](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/blob/master/app/src/main/java/com/example/myapplication/db/MyDatabaseHelper.kt)
+ - [MyDatabaseHelper](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/blob/master/app/src/main/java/com/example/myapplication/storage/db/MyDatabaseHelper.kt)
 - [x] 第八章 跨进程共享数据，探究 ContentProvider
  - [Permission](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/blob/master/app/src/main/java/com/example/myapplication/activity/PermissionActivity.kt)
  - [ContentProvider](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/blob/master/app/src/main/java/com/example/myapplication/activity/ContentProviderActivity.kt)

@@ -7,6 +7,23 @@ import android.util.Log
 import android.view.View
 import com.example.myapplication.R
 import com.example.myapplication.base.BaseActivity
+import com.example.myapplication.broadcast.BroadcastActivity
+import com.example.myapplication.contentprovider.ContentProviderActivity
+import com.example.myapplication.contentprovider.PermissionActivity
+import com.example.myapplication.fragment.FragmentActivity
+import com.example.myapplication.multimedia.CameraAlbumActivity
+import com.example.myapplication.multimedia.NotificationActivity
+import com.example.myapplication.multimedia.PlayActivity
+import com.example.myapplication.network.NetworkActivity
+import com.example.myapplication.network.RetrofitActivity
+import com.example.myapplication.service.ThreadActivity
+import com.example.myapplication.service.ServiceActivity
+import com.example.myapplication.storage.FileActivity
+import com.example.myapplication.storage.SQLiteActivity
+import com.example.myapplication.storage.SharedPreferencesActivity
+import com.example.myapplication.ui.ChatActivity
+import com.example.myapplication.ui.ListViewActivity
+import com.example.myapplication.ui.RecyclerViewActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity(), View.OnClickListener {
@@ -15,10 +32,15 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        initView()
+    }
+
+    private fun initView() {
         // 'kotlin-android-extensions' 插件的作用，不必再 findViewById()。
         // 这个插件会根据布局文件中定义的控件 id 自动生成一个具有相同名称的变量。
 //      android:textAllCaps="false" 取消默认的字母全部大写
         btn_main.setOnClickListener {
+
             // 这里使用了 Kotlin 的语法糖，实际上调用的是 editText.getText()
             // 不必特意记忆，直接输入 getText() 后，Android Studio 会自动给提示转换。
 //            val inputext = editText.text.toString()
@@ -30,6 +52,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             // 传递参数
             intent.putExtra("extra_data",data)
 //            startActivity(intent)
+            // 带返回值的跳转
             startActivityForResult(intent,1)
 
             // 隐式启动
@@ -50,6 +73,10 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 //            startActivity(intent)
         }
 
+        initListener()
+    }
+
+    private fun initListener() {
         btnMainLV.setOnClickListener(this)
         btnMainRV.setOnClickListener(this)
         btnMainChat.setOnClickListener(this)

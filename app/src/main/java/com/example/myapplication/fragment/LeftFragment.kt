@@ -21,8 +21,6 @@ class LeftFragment : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         // 通过 LayoutInflater 的 inflate() 动态加载布局
-        return inflater.inflate(R.layout.left_fragment,container,false)
+        return inflater.inflate(R.layout.fragment_left,container,false)
     }
-
-
 }

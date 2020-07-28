@@ -13,7 +13,6 @@ import android.os.IBinder
 import android.util.Log
 import androidx.core.app.NotificationCompat
 import com.example.myapplication.R
-import com.example.myapplication.activity.ServiceActivity
 import kotlin.concurrent.thread
 
 /**
@@ -59,7 +58,7 @@ class MyService : Service() {
             val channel = NotificationChannel("my_service","前台 Service 通知",NotificationManager.IMPORTANCE_DEFAULT)
             manager.createNotificationChannel(channel)
         }
-        val intent = Intent(this,ServiceActivity::class.java)
+        val intent = Intent(this, ServiceActivity::class.java)
         val pi = PendingIntent.getActivity(this,0,intent,0)
         val notification = NotificationCompat.Builder(this,"my_service")
             .setContentTitle("This is content title")
@@ -104,7 +103,5 @@ class MyService : Service() {
     override fun onDestroy() {
         super.onDestroy()
         Log.d("TAG","onDestroy")
-
     }
-
 }

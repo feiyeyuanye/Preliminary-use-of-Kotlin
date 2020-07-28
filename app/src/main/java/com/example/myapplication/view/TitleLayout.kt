@@ -29,5 +29,4 @@ class TitleLayout(context: Context,attrs: AttributeSet) : LinearLayout(context,a
             Toast.makeText(context,"Toast",Toast.LENGTH_SHORT).show()
         }
     }
-
 }

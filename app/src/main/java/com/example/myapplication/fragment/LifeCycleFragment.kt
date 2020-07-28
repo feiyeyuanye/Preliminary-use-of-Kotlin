@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment
  * onPause(),onStop(),onDestroyView() -> 从返回栈中回到上一个 Fragment -> onCreateView()
  * Fragment 被销毁。
  *
+ * ----------------------------------------------------------------------------------------------------
  *
  * Fragment 的状态分为：
  * 1. 运行状态：当其所关联的 Activity 正处于运行状态时。
@@ -28,8 +29,6 @@ import androidx.fragment.app.Fragment
  * 但在事务提交之前 并没有调用 了 addToBackStack()，此时会进入销毁状态。
  */
 class LifeCycleFragment :Fragment() {
-
-
 
     companion object{
         // 定义了一个 TAG 常量
@@ -50,7 +49,7 @@ class LifeCycleFragment :Fragment() {
 
     /**
      * 为 Fragment 创建视图（加载布局）时调用
-     *
+     * --------------------------------------------------------------
      * onCreate(),onCreateView(),onActivityCreated 三个方法中：
      * 可通过 savedInstanceState 参数获取 onSaveInstanceState() 保存的数据
      */
