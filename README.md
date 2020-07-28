@@ -2,7 +2,7 @@
 Kotlin 的语法练习（第三行代码）
 <br/>
 目录
-- [x] 第一章 开始起程，你的第一行 Android 代码
+- [ ] 第一章 开始起程，你的第一行 Android 代码
 - [x] [第二章 探究新语言，快速入门 Kotlin 编程](https://jianghouren.com/tags/Kotlin/)
 - [x] [第三章 先从看得到的入手，探究 Activity](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/tree/master/app/src/main/java/com/example/myapplication/activity)
 - [x] [第四章 软件也要拼脸蛋，UI 开发的点点滴滴](https://github.com/feiyeyuanye/Preliminary-use-of-Kotlin/tree/master/app/src/main/java/com/example/myapplication/ui)
